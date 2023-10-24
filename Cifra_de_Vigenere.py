@@ -19,7 +19,7 @@ def cifra_vigenere(texto, chave, cifrar=True):
         else:
             resultado.append(char)  # Se o caractere não for uma letra, mantém inalterado.
 
-    return ''.join(resultado)  # Retorna o resultado como uma string.
+    return ''.join(resultado)  # Retorna o resultado (lista de caracteceres) como uma string.
 
 # Definição da função principal do programa.
 def main():
