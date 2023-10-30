@@ -1,46 +1,35 @@
-# Cifra-Vigenere
+# Criptografia Cifra-Vigenere
+## O que é a criptografia
+Na criptografia, encriptação é o processo de codificação de uma mensagem ou informação, de forma que, somente as pessoas autorizadas conseguem ter acesso. O processo de encriptação não isenta de interferências, mas, evita que o conteúdo possa ser visualizado por qualquer um interceptador. Ela é formada por quatro princípios iniciais, sendo eles: Confidencialidade, autenticação, não repudiabilidade e a integridade da informação, (assim, o remetente não consegue negar o envio da informação).
 
-## História da utilização da Cifra de Vigênere
-### Invenção e História: 
-  A cifra de Vigenère foi inventada no século XVI pelo criptógrafo francês Blaise de Vigenère. Foi uma das cifras mais seguras da época e foi usada em correspondências de figuras proeminentes, como reis e diplomatas.
+Dentro da criptografia também ocorre a descriptografia, sendo ela o processo contrário da encriptação, onde somente criadores das plataformas e pessoas com um alto conhecimento na área conseguem efetuar, mesmo assim, é exigido grandes recursos computacionais e conhecimento, além do tempo dedicado a essa atividade ser intenso.
 
-### Criptoanálise: 
-  A cifra de Vigenère apresentou desafios para os criptoanalistas da época, uma vez que a substituição alfabética variável tornava a quebra do código mais difícil do que as cifras de substituição simples.
+É importante ressaltar que nenhuma forma de criptografia é totalmente segura, Nela podemos citar as:
 
-### Comunicação em Tempo de Guerra:
-  Durante períodos de guerra e conflito, a cifra de Vigenère foi usada para proteger comunicações militares e diplomáticas, tornando a interceptação de mensagens mais difícil.
+Assimétricas (Públicas): As chaves são públicas e para cada acesso é gerada uma chave. É mais recomendado utilizar em casos onde irá ser utilizada por diversas pessoas e a localidade de cada usuário é distante.
 
-### Chave da Cifra: 
-  A segurança da cifra de Vigenère dependia da chave utilizada. O destinatário e o remetente compartilhavam uma chave secreta que determinava como as letras seriam cifradas e decifradas.
+Simétricas (Privadas): As chaves utilizadas serão idênticas, tanto pelo fornecedor quanto pelor receptor, dessa forma, é melhor ser utilizada para casos em que conseguimos enviar a chave pessoalmente, já que, a partir do momento em que enviamos via web, a mesma pode estar sendo exposta.
 
-### Decifração e Quebra: 
-  A cifra de Vigenère foi quebrada pela primeira vez por Charles Babbage no século XIX. A técnica de ataque de Kasiski e a análise de frequência foram usadas para quebrar códigos Vigenère.
+## Cifra de Vigenère
+A cifra de Vigenère é um método de criptografia que usa uma série de diferentes cifras de César baseadas em letras de uma senha. Trata-se de uma versão simplificada de uma mais geral cifra de substituição polialfabética, inventada por Leon Battista Alberti cerca de 1465.
 
-### Uso na Literatura:
-  A cifra de Vigenère é mencionada na literatura clássica, incluindo obras de Edgar Allan Poe, como "The Gold-Bug," onde a cifra é usada como parte da trama.
+#### Cifra de Cesar
+Numa cifra de César, cada letra do alfabeto é deslocada da sua posição um número fixo de lugares; por exemplo, se tiver um deslocamento de 3, "A" torna-se "D", "B" fica "E", etc. A cifra de Vigenère consiste no uso de várias cifras de César em sequência, com diferentes valores de deslocamento ditados por uma "palavra-chave".
 
-### Máquinas de Criptografia:
-  No século XIX, máquinas de cifra, como a "cifra de Vigenère mecânica," foram desenvolvidas para automatizar o processo de cifragem e decifragem usando a cifra de Vigenère.
+#### Como funciona a Cifra de Vigenère
+Para cifrar, é usada uma tabela de alfabetos que consiste no alfabeto escrito 26 vezes em diferentes linhas, cada um deslocado ciclicamente do anterior por uma posição. As 26 linhas correspondem às 26 possíveis cifras de César. Uma palavra é escolhida como "palavra-chave", e cada letra desta palavra vai indicar a linha a ser utilizada para cifrar ou decifrar uma letra da mensagem.
 
-### Uso em Episódios Históricos:
-  A cifra de Vigenère foi usada em correspondências e mensagens durante eventos históricos, como a Guerra Civil Americana e a Guerra Napoleônica.
+Por exemplo, supondo que se quer criptografar o texto:
 
-Hoje em dia, a cifra de Vigenère não é usada para fins práticos de segurança, pois algoritmos de criptografia modernos oferecem níveis muito mais elevados de proteção. No entanto, é importante reconhecer seu papel histórico na evolução da criptografia e sua contribuição para o desenvolvimento de técnicas de segurança da informação. Ela continua sendo uma parte interessante da história da criptografia e é frequentemente usada em contextos históricos e educacionais.
+**TEXTO**
+
+E a chave que você escolheu é o texto:
+
+**CHAVE**
+
+A primeira letra do texto, **T**, é cifrada usando o alfabeto na linha **C**, que é a primeira letra da chave. Basta olhar para a letra na linha **T** e coluna **C** na grelha de Vigenère, e que é um **V**. Para a segunda letra do texto, ver a segunda letra da chave: linha **E** e coluna **H** , que é **L**, continuando sempre até obter:
 
 
+#### Texto:	TEXTO | Chave:	CHAVE | Texto cifrado: VLXOS
 
-## Sobre o algoritmo na versão Loop For e na versão Recursiva
-
-#### Eficiência:
-
-Versão com Loop For: O código original usa um loop for para iterar sobre o texto e realizar a cifragem ou decifragem. Geralmente, os loops for em Python são eficientes e têm um desempenho bom o suficiente para a maioria das situações. No entanto, a versão original poderia ser ligeiramente mais eficiente, uma vez que não envolve a sobrecarga da recursão.
-
-Versão Recursiva: A versão recursiva é menos eficiente em comparação com a versão com loop, devido à sobrecarga de chamadas de função. A recursão pode consumir mais recursos de memória e pode ser mais lenta em textos muito longos, devido ao acúmulo da pilha de chamadas. No entanto, para textos curtos, a diferença de desempenho pode ser insignificante.
-
-#### Estilo Moderno:
-
-Versão com Loop For: A versão original com loop for é mais tradicional e pode ser mais fácil de entender para muitos programadores, pois segue um estilo de programação imperativa comum em Python.
-
-Versão Recursiva: A versão recursiva é menos comum em Python, mas pode ser vista como uma abordagem mais "funcional" e elegante. Ela aproveita a recursão, que é um conceito poderoso em programação. Alguns desenvolvedores consideram a versão recursiva mais moderna, principalmente em termos de estilo de programação.
-
-Em resumo, a versão com loop for é provavelmente mais eficiente, especialmente em textos longos, enquanto a versão recursiva é mais moderna em termos de estilo de programação. A escolha entre as duas depende de suas prioridades no projeto. Se a eficiência é uma preocupação primordial, a versão com loop for é uma escolha sólida. Se você valoriza um estilo de programação mais funcional e elegante, pode preferir a versão recursiva. Em última análise, a decisão depende do equilíbrio entre eficiência e estilo no contexto específico do seu projeto.
+![Grade de Vigenere](./img/img1.png)
