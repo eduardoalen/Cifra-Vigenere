@@ -1,6 +1,7 @@
-# Criptografia Cifra-Vigenere
-## Integrantes: Alison Leal, Breno Nogueira, Davi Sousa Alves, Eduardo Soares
-## O que é a criptografia
+# Projeto - Computabilidade e Complexidade de Algoritmo
+## Criptografia Cifra-Vigenere
+### Integrantes: Alison Leal, Breno Nogueira, Davi Sousa Alves, Eduardo Soares
+### O que é a criptografia
 Na criptografia, encriptação é o processo de codificação de uma mensagem ou informação, de forma que, somente as pessoas autorizadas conseguem ter acesso. O processo de encriptação não isenta de interferências, mas, evita que o conteúdo possa ser visualizado por qualquer um interceptador. Ela é formada por quatro princípios iniciais, sendo eles: Confidencialidade, autenticação, não repudiabilidade e a integridade da informação, (assim, o remetente não consegue negar o envio da informação).
 
 Dentro da criptografia também ocorre a descriptografia, sendo ela o processo contrário da encriptação, onde somente criadores das plataformas e pessoas com um alto conhecimento na área conseguem efetuar, mesmo assim, é exigido grandes recursos computacionais e conhecimento, além do tempo dedicado a essa atividade ser intenso.
