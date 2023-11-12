@@ -51,8 +51,48 @@ aplicando a cifra à medida que avança.
 A recursividade pode tornar o código mais 
 simples e legível, podendo evitar 
 loops aninhados e complexos que seriam necessários para rastrear a posição atual no texto e na chave. Isso pode simplificar a implementação.
-![Grade de Vigenere](./img/img2.png)
+![Cifra com Recursividade](./img/img2.png)
+
 #### Cifra com Laço “for”
 A razão pela qual um laço "for" foi utilizado neste código é porque ele 
 permite iterar sobre os caracteres do texto de forma controlada e sistemática, 
 processando cada caractere individualmente.
+
+Usando um laço "for", o código pode ser 
+aplicado a cada caractere de maneira eficiente e consistente, evitando a 
+necessidade de repetir a lógica de cifragem ou decifragem para cada caractere 
+separadamente.
+![Cifra com laço "for"](./img/img3.png)
+
+## Limite dos Algoritmos
+No algoritmo da **cifra de recursão**, é possível inserir um texto a ser codificado com no máximo 1000 caracteres. Em Python, existe um limite para a profundidade máxima de recursão, determinada pela configuração padrão do interpretador. Esse limite atua como uma medida de segurança para evitar que um programa recursivo consuma toda a pilha de chamadas, resultando em um estouro de pilha (stack overflow).
+
+Com base nos testes realizados, evidenciados nas figura abaixo, os **laços "for"** demonstram ser mais eficientes em termos de velocidade, uma vez que não apresentam o overhead associado às chamadas de função recursiva. Adicionalmente, compiladores e interpretadores de linguagens de programação frequentemente otimizam loops, tornando-os mais eficientes. No entanto, a eficiência também depende do contexto de uso; em casos em que a proposta e a resolução são pequenas, **a diferença entre os métodos é quase nula**.
+
+![Tela de execução testando o limite do laço "for"](./img/img4.png)
+
+## Complexidade do algoritmo da Cifra de Vigenère
+### Notação Big O
+A notação **Big O** é uma maneira de medir a complexidade de um algoritmo, descrevendo como o tempo de execução ou o espaço de memória aumenta à medida que o tamanho da entrada cresce. Em outras palavras, ela auxilia na previsão de quanto tempo ou espaço um algoritmo demandará para processar uma quantidade específica de dados. Na figura abaixo, apresentam-se as principais notações **Big O**.
+
+![ Principais notações Big O](./img/img5.png)
+
+#### Complexidade do algoritmo da Cifra de Recursividade
+A complexidade global desse algoritmo recursivo é O(n), onde 'n' representa o tamanho do texto de entrada. Isso ocorre porque a parte principal do processamento, realizada pela função cifra_vigenere, envolve uma chamada recursiva para cada caractere do texto, resultando em uma complexidade linear em relação ao tamanho do texto.
+
+As operações de entrada do usuário, como a obtenção do texto, chave e escolha (cifrar ou decifrar), são operações de tempo constante (O(1)) e não afetam a complexidade geral.
+
+#### Complexidade do algoritmo da Cifra com laço “for”
+Na função cifra_vigenere, o loop "for" percorre o texto caractere por caractere, resultando em uma complexidade de tempo de O(n), onde 'n' é o tamanho do texto. Dentro do loop, a maioria das operações (verificação de letra, cálculo de índices, operações de soma, subtração e módulo, etc.) são de tempo constante, uma vez que são realizadas para cada caractere individual. A chamada à função “resultado.append(novo_char)” dentro do loop também é uma operação de tempo constante. No geral, a complexidade da função “cifra_vigenere” é dominada pela complexidade do loop, ou seja, O(n).
+
+## Linguagem interpretada e Linguagem compilada
+Uma **linguagem interpretada (Python)** é uma linguagem de programação que passa por um programa chamado interpretador, o qual lê e executa o código fonte linha por linha. Isso proporciona portabilidade e flexibilidade, mas geralmente resulta em um desempenho mais lento.
+
+Já uma **linguagem compilada (C)** é uma linguagem de programação que passa por um programa chamado compilador, responsável por converter diretamente o código fonte em código de máquina, o qual é o código binário que o processador pode executar. Isso oferece desempenho rápido e eficiente, porém com pouca portabilidade.
+
+### Comparativo entre as linguagens
+O código em Python é mais flexível em termos de manipulação de strings e índices negativos, facilitando a implementação da cifra de Vigenère.
+
+As operações para calcular índices de caracteres no código Python são mais diretas (ord(char) - 65) em comparação com o código C (c - 'A'), conforme observado na Figura 10, proporcionando uma leitura mais fácil.
+
+A complexidade de ambos os algoritmos é **O(n)**.
