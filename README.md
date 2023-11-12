@@ -36,3 +36,23 @@ A primeira letra do texto, **T**, é cifrada usando o alfabeto na linha **C**, q
 #### Texto:	TEXTO | Chave:	CHAVE | Texto cifrado: VLXOS
 
 ![Grade de Vigenere](./img/img1.png)
+
+
+## Cifra em Python
+Neste trabalho, são utilizados dois tipos diferentes de códigos: um com 
+recursividade e outro utilizando um laço "for" para a resolução da criptografia e 
+descriptografia
+#### Cifra recursiva
+A recursividade é empregada neste código para percorrer cada caractere 
+do texto de entrada, aplicando a cifra de Vigenère de maneira iterativa. Isso 
+possibilita que o algoritmo processe o texto inteiro, caractere por caractere, 
+aplicando a cifra à medida que avança.
+
+A recursividade pode tornar o código mais 
+simples e legível, podendo evitar 
+loops aninhados e complexos que seriam necessários para rastrear a posição atual no texto e na chave. Isso pode simplificar a implementação.
+![Grade de Vigenere](./img/img2.png)
+#### Cifra com Laço “for”
+A razão pela qual um laço "for" foi utilizado neste código é porque ele 
+permite iterar sobre os caracteres do texto de forma controlada e sistemática, 
+processando cada caractere individualmente.
